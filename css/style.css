@@ -1,0 +1,20 @@
+@import url(reset.css);
+.container {
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+  grid-template-rows: 200vh 30vh;
+  grid-template-areas: "hd main" "hd ft";
+}
+.header {
+  background-color: #ff37d5;
+  grid-area: hd;
+}
+.main {
+  background-color: #35fff7;
+  grid-area: main;
+}
+.footer {
+  background-color: #fff729;
+  grid-area: ft;
+}
+/*# sourceMappingURL=style.css.map */
