@@ -1,20 +1,77 @@
 @import url(reset.css);
-.container {
-  display: grid;
-  grid-template-columns: 30vw 70vw;
-  grid-template-rows: 200vh 30vh;
-  grid-template-areas: "hd main" "hd ft";
-}
+@import url(http://allfont.ru/allfont.css?fonts=b52);
 .header {
-  background-color: #ff37d5;
-  grid-area: hd;
+  background-color: #131313;
+  height: 100vh;
+  width: 20vw;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+}
+.ul-nav {
+  margin: 150px 35px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.li-nav {
+  transition: transform 300ms;
+}
+.li-nav:hover {
+  transform: scale(1.2, 1.2);
+}
+.nav-a {
+  color: #fff;
+  font-family: B52;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1.7em;
+  line-height: 1.6em;
+  transition: color 300ms;
+}
+.nav-a:hover {
+  color: #b5b5b5;
+}
+.container-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .main {
-  background-color: #35fff7;
-  grid-area: main;
+  height: 300vh;
+  width: 80vw;
+  background-color: #fff;
+}
+.title {
+  margin: 30px 20px 0 0;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: ". . bubble" "movie . bubble" ". . bubble";
+}
+.movie-frame {
+  height: 200px;
+  grid-area: movie;
+  background-image: url("../img/14.gif");
+  background-size: contain;
+}
+.bubble {
+  width: 100%;
+  grid-area: bubble;
+  background-image: url("../img/13.gif");
+  background-size: 100%;
+  background-position: center center;
+  align-self: center;
+}
+.container-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .footer {
   background-color: #fff729;
-  grid-area: ft;
+  width: 80vw;
+  height: 20vw;
 }
 /*# sourceMappingURL=style.css.map */
