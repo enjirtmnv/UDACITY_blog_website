@@ -3,8 +3,17 @@
 @widthHeader: 20vw;
 @heightContent: 300vh;
 @heightHeader: 100vh;
+@fontB52: B52;
+@fontChinker: Chonker;
+
 
 @import url(http://allfont.ru/allfont.css?fonts=b52);
+@import url(http://allfont.ru/allfont.css?fonts=chonker);
+@import url(http://allfont.ru/allfont.css?fonts=eminenz);
+@import url(http://allfont.ru/allfont.css?fonts=larabiefont-free);
+@import url(http://allfont.ru/allfont.css?fonts=cella);
+@import url(http://allfont.ru/allfont.css?fonts=esat-hoxha-nrml);
+@import url(http://allfont.ru/allfont.css?fonts=abc_typewriterrussian);
 
 .header{
   background-color: #131313;
@@ -31,14 +40,15 @@
 
 .nav-a{
   color: #fff;
-  font-family: B52;
+  font-family: @fontB52;
   font-weight: 400;
   text-decoration: none;
+  text-transform: lowercase;
   font-size: 1.7em;
   line-height: 1.6em;
   transition: color 300ms;
   &:hover {
-    color: #b5b5b5;
+    color: #e97d7d;
   }
 }
 
@@ -54,36 +64,195 @@
   background-color: #fff;
 }
 
-.title{
+.container-logo{
   margin: 30px 20px 0 0;
-  height: 50vh;
+  height: 340px;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    ". . bubble"
-    "movie . bubble"
-    ". . bubble";
+    ". . tv"
+    "movie . tv"
+    ". . tv";
   //border: 5px solid yellow;
+}
+
+.container-movie-frame{
+  display: grid;
+  grid-area: movie;
 }
 
 .movie-frame{
-  height: 200px;
-  grid-area: movie;
-  //border: 5px solid yellow;
-  background-image: url("../img/14.gif");
-  background-size: contain;
+  height: 195px;
+  z-index: 5;
+}
+
+.container-hand{
+  position: relative;
+  z-index: 1;
+}
+
+.hand{
+  position: absolute;
+  height: 190px;
+  animation: open 5s steps(4) infinite;
+}
+
+@keyframes open {
+  from{
+    left:0;
+  }
+  to{
+    left: 455px;
+  }
+}
+
+.container-tv{
+  display: grid;
+  grid-area: tv;
+}
+
+.tv{
+  width: 550px;
+  z-index: 5;
+}
+
+.container-bubble{
+  position: relative;
+  z-index: 1;
 }
 
 .bubble{
-  width: 100%;
-  grid-area: bubble;
-  background-image: url("../img/13.gif");
-  background-size: 100%;
-  background-position: center center;
-  align-self: center;
-  //border: 5px solid #ff2b39;
+  position: absolute;
+  height: 300px;
+  left: 100px;
+  top: 20px;
 }
+
+.container-title{
+  height: 420px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+          ". h1 ."
+          ". info athr "
+          ". intrd ."
+          ". pr1 . "
+          ". spn1 . "
+          ". opera . "
+          ". pr2 . "
+          ". spn2 . "
+          ". pic . "
+          ". pr3 . ";
+}
+
+.title-h1{
+  grid-area: h1;
+  font-family: @fontB52;
+  font-size: 5.3em;
+  color: #000;
+}
+
+
+.container-author{
+  grid-area: info;
+}
+
+.author{
+  font-family: 'Cella', arial;
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #b64;
+  margin: 40px 0 10px 0;
+}
+
+.author-position{
+  font-size: 1.4em;
+  font-family: 'ABC_TypeWriterRussian', arial;
+  margin: 0 0 50px 0;
+}
+
+
+.blog-info{
+  justify-self: center;
+  grid-area: athr;
+  margin: 40px 0 0 0;
+}
+
+.date-info{
+  font-family: 'Cella', arial;
+  margin: 0 0 10px 0;
+}
+
+.link-info a{
+  padding: 0 7px 0 7px;
+}
+
+.link-info a img{
+  height: 30px;
+  margin: 0 0 46px 0;
+}
+
+.container-article{
+  //
+  //display: grid;
+  //
+  //grid-template-columns: 1fr 3fr 2fr;
+  //grid-template-rows: repeat(8, 1fr);
+  //grid-template-areas:
+  //        ". intrd ."
+  //        ". pr1 . "
+  //        ". spn1 . "
+  //        ". opera . "
+  //        ". pr2 . "
+  //        ". spn2 . "
+  //        ". pic . "
+  //        ". pr3 . ";
+}
+
+.introduction{
+  font-family: 'Larabiefont Free', arial;
+  font-size: 1.4em;
+  color: #000;
+  font-weight: bolder;
+  grid-area: intrd;
+}
+
+.par1{
+  font-family: 'Larabiefont Free', arial;
+  font-size: 1.2em;
+  margin: 30px 0 30px 0;
+  grid-area: pr1;
+}
+
+.span1{
+  grid-area: spn1;
+}
+
+.video-opera{
+  grid-area: opera;
+}
+
+.par2{
+  grid-area: pr2;
+}
+
+.span2{
+  grid-area: spn2;
+}
+
+.pic-with-word{
+  grid-area: pic;
+  width: 350px;
+}
+
+.par3{
+  grid-area: pr3;
+}
+
+
+
 
 .container-footer{
   display: flex;
