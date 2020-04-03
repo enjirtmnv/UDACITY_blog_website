@@ -1,7 +1,7 @@
 @import url(reset.css);
 @widthContent: 80vw;
 @widthHeader: 20vw;
-@heightContent: 300vh;
+@heightContent: 480vh;
 @heightHeader: 100vh;
 @fontB52: B52;
 @fontChinker: Chonker;
@@ -14,6 +14,8 @@
 @import url(http://allfont.ru/allfont.css?fonts=cella);
 @import url(http://allfont.ru/allfont.css?fonts=esat-hoxha-nrml);
 @import url(http://allfont.ru/allfont.css?fonts=abc_typewriterrussian);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
 .header{
   background-color: #131313;
@@ -48,7 +50,7 @@
   line-height: 1.6em;
   transition: color 300ms;
   &:hover {
-    color: #e97d7d;
+    color: #d77;
   }
 }
 
@@ -129,22 +131,29 @@
   top: 20px;
 }
 
-.container-title{
-  height: 420px;
+.container-content{
+  height: 2000px;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(17, 1fr);
   grid-template-areas:
-          ". h1 ."
-          ". info athr "
-          ". intrd ."
-          ". pr1 . "
-          ". spn1 . "
-          ". opera . "
-          ". pr2 . "
-          ". spn2 . "
-          ". pic . "
-          ". pr3 . ";
+          " . h1 ."
+          " blog author athr "
+          " . intrd ."
+          " . par1 . "
+          " . span1 . "
+          " . opera . "
+          " . par1v2 ."
+          " . par2 . "
+          " . par2v2 . "
+          " . list-crown ."
+          " . list-angel ."
+          " . par3 ."
+          " . span2 . "
+          " . pic . "
+          " . par4 . "
+          " . par4v2 ."
+          " written author-end . ";
 }
 
 .title-h1{
@@ -154,17 +163,31 @@
   color: #000;
 }
 
+.name-blog{
+  grid-area: blog;
+  transform: rotate(270deg);
+  display:flex;
+  justify-self: self-end;
+  align-self: center;
+  padding:0 0 40px 10px;
+  font-family: 'Cella', arial;
+  font-weight: 300;
+  font-size: 1.4em;
+}
 
 .container-author{
-  grid-area: info;
+  grid-area: author;
 }
 
 .author{
-  font-family: 'Cella', arial;
-  font-weight: bolder;
-  font-size: 1.8em;
-  color: #b64;
   margin: 40px 0 10px 0;
+  & a{
+    text-decoration: none;
+    font-family: 'Cella', arial;
+    font-weight: bolder;
+    font-size: 1.8em;
+    color: #b64;
+  }
 }
 
 .author-position{
@@ -191,68 +214,193 @@
 
 .link-info a img{
   height: 30px;
-  margin: 0 0 46px 0;
+  margin: 0 0 36px 0;
+  padding: 5px;
+  transition: background 200ms ease-out, transform 200ms ease-out;
+  &:hover{
+    background: radial-gradient(#f58585, #fff) ;
+    transform: scale(1.2,1.2);
+    border-radius: 30%;
+  }
 }
 
-.container-article{
-  //
-  //display: grid;
-  //
-  //grid-template-columns: 1fr 3fr 2fr;
-  //grid-template-rows: repeat(8, 1fr);
-  //grid-template-areas:
-  //        ". intrd ."
-  //        ". pr1 . "
-  //        ". spn1 . "
-  //        ". opera . "
-  //        ". pr2 . "
-  //        ". spn2 . "
-  //        ". pic . "
-  //        ". pr3 . ";
+.text{
+  line-height: 1.5em;
+  font-size: 1.1em;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  color: #000;
 }
 
 .introduction{
-  font-family: 'Larabiefont Free', arial;
-  font-size: 1.4em;
-  color: #000;
-  font-weight: bolder;
   grid-area: intrd;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  font-family: 'Cella', arial;
+  font-weight: 700;
+  margin: 50px 0 30px 0;
 }
 
 .par1{
-  font-family: 'Larabiefont Free', arial;
-  font-size: 1.2em;
-  margin: 30px 0 30px 0;
-  grid-area: pr1;
+  grid-area: par1;
+  .text;
 }
 
 .span1{
-  grid-area: spn1;
+  grid-area: span1;
+  font-family: 'Cella', arial;
+  color: #000;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 50px 0 30px 0;
 }
 
 .video-opera{
   grid-area: opera;
 }
 
+.par1v2{
+  grid-area: par1v2;
+  font-family: 'Cella', arial;
+  color: #000;
+  font-size: 1.2em;
+  margin: 50px 0 30px 0;
+}
+
 .par2{
-  grid-area: pr2;
+  grid-area: par2;
+  .text;
 }
 
-.span2{
-  grid-area: spn2;
+.par2v2{
+  grid-area: par2v2;
+  margin: 30px 0 0 0;
+  .text
 }
 
-.pic-with-word{
-  grid-area: pic;
-  width: 350px;
+.container-list-crown{
+  grid-area: list-crown;
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0 15px 0;
+}
+
+.container-list{
+  & li{
+    list-style: square inside;
+    font-family: 'ABC_TypeWriterRussian', arial;
+    color: #000;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    padding: 10px 0 10px 0;
+  }
+}
+
+.container-crown{
+  width: 40%;
+  margin: 0 0 0 20px;
+}
+
+.angel{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.container-list-angel{
+  grid-area: list-angel;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0 30px 0;
+}
+
+.container-angel{
+  width: 40%;
+  margin: 0 30px 0 0;
+}
+
+.crown{
+  width: 100%;
+  border-radius: 50%;
 }
 
 .par3{
-  grid-area: pr3;
+  grid-area: par3;
+  .text;
+}
+
+.span2{
+  grid-area: span2;
+  font-family: 'Cella', arial;
+  color: #000;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 50px 0 30px 0;
+}
+
+.container-pic-waiting{
+  width: 100%;
+  grid-area: pic;
+  display: flex;
+  flex-direction: row;
+}
+
+.pic-venus{
+  width: 50%;
+  padding: 0 5px 0 0;
+}
+
+.pic-hercules{
+  width: 50%;
+  padding: 0 0 0 5px;
+}
+
+.par4{
+  grid-area: par4;
+  font-family: 'Cella', arial;
+  color: #000;
+  font-size: 1.2em;
+  margin: 50px 0 30px 0;
+}
+
+.par4v2{
+  grid-area: par4v2;
+  margin: 0 0 50px 0;
+  .text
 }
 
 
+.name-written{
+  grid-area: written;
+  transform: rotate(270deg);
+  display:flex;
+  justify-self: self-end;
+  align-self: center;
+  padding: 45px 10px 0 0;
+  font-family: 'Cella', arial;
+  font-weight: 300;
+  font-size: 1.4em;
+}
 
+.container-author-end{
+  grid-area: author-end;
+}
+
+.author-end{
+  margin: 40px 0 10px 0;
+  & a{
+    text-decoration: none;
+    font-family: 'Cella', arial;
+    font-weight: bolder;
+    font-size: 1.8em;
+    color: #b64;
+  }
+}
+
+.author-position-end{
+  font-size: 1.4em;
+  font-family: 'ABC_TypeWriterRussian', arial;
+  margin: 0 0 50px 0;
+}
 
 .container-footer{
   display: flex;
@@ -261,7 +409,7 @@
 }
 
 .footer{
-  background-color: #fff729;
+  background-color: #b64;
   width: 80vw;
   height: 20vw;
 }
