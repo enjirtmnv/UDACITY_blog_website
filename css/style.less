@@ -1,8 +1,7 @@
 @import url(reset.css);
-@widthContent: 80vw;
-@widthHeader: 20vw;
-@heightContent: 480vh;
-@heightHeader: 100vh;
+
+
+
 @fontB52: B52;
 @fontChinker: Chonker;
 
@@ -19,8 +18,8 @@
 
 .header{
   background-color: #131313;
-  height: @heightHeader;
-  width: @widthHeader;
+  height: 100vh;
+  width: 20vw;
   position: fixed;
   display: flex;
   justify-content: flex-end;
@@ -55,14 +54,15 @@
 }
 
 .container-main{
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
 .main{
-  height: @heightContent;
-  width: @widthContent;
+  height: 100%;
+  width: 80vw;
   background-color: #fff;
 }
 
@@ -71,7 +71,7 @@
   height: 340px;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
     ". . tv"
     "movie . tv"
@@ -132,10 +132,10 @@
 }
 
 .container-content{
-  height: 2000px;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-  grid-template-rows: repeat(17, 1fr);
+  grid-template-rows: repeat(17, auto);
   grid-template-areas:
           " . h1 ."
           " blog author athr "
@@ -299,6 +299,8 @@
 .container-crown{
   width: 40%;
   margin: 0 0 0 20px;
+  display: flex;
+  align-items: center;
 }
 
 .angel{
@@ -316,6 +318,8 @@
 .container-angel{
   width: 40%;
   margin: 0 30px 0 0;
+  display: flex;
+  align-items: center;
 }
 
 .crown{
@@ -337,7 +341,7 @@
   margin: 50px 0 30px 0;
 }
 
-.container-pic-waiting{
+.container-pic-venus-hercules{
   width: 100%;
   grid-area: pic;
   display: flex;
@@ -374,7 +378,7 @@
   transform: rotate(270deg);
   display:flex;
   justify-self: self-end;
-  align-self: center;
+  align-self: self-start;
   padding: 45px 10px 0 0;
   font-family: 'Cella', arial;
   font-weight: 300;
@@ -383,6 +387,7 @@
 
 .container-author-end{
   grid-area: author-end;
+  margin: 0 0 50px 0;
 }
 
 .author-end{
